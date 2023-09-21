@@ -1,0 +1,33 @@
+.sidebar{
+    background-color: #1c2b36;color: white;
+    width: 250px;
+    height: 100vh;
+}
+.Titulo{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    margin-top: 10px;
+}
+.Titulo__color{
+    color: #1f998d;
+}
+.sidebar__ul{
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar__li{
+    width: 100%;
+    padding: 15px 0px;
+    margin-bottom: 10px;
+}
+.sidebar__a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
