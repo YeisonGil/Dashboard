@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Sidebar from "./components/Sidebar/Sidebar"
+import Navbar from "./components/Navbar/Navbar"
+import Inicio from "./pages/Inicio"
+import Components from "./pages/Components"
+import Charts from "./pages/Charts"
+import UiFeatures from "./pages/UiFeatures"
+import FormElements from "./pages/FormElements"
+import Tables from "./pages/Tables"
+import Maps from "./pages/Maps"
+import MenuLvl1 from "./pages/MenuLvl1"
+import Pages from "./pages/Pages"
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="general">
+      <BrowserRouter>
+      <div className="nav">
+        <Sidebar/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <div className="content">
+          <Navbar/>
+          <Routes>
+            <Route path="/" element={ <Inicio/> }/>
+            <Route path="/components" element={ <Components/> }/>
+            <Route path="/charts" element={ <Charts/> }/>
+            <Route path="/UiFeatures" element={ <UiFeatures/> }/>
+            <Route path="/FormElements" element={ <FormElements/> }/>
+            <Route path="/tables" element={ <Tables/> }/>
+            <Route path="/maps" element={ <Maps/> }/>
+            <Route path="/pages" element={ <Pages/> }/>
+            <Route path="/menulvl1" element={ <MenuLvl1/> }/>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </div>
   )
 }
 
